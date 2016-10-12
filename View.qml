@@ -116,7 +116,7 @@ Item {
             delegate: TextInput {
                 text: styleData.value
                 onEditingFinished: {
-                    if(styleData.row < 0)
+                    if(styleData.row < 0) // при очистке components становится отрицательным
                         return;
 
                     var res = evalExpressionAndCheck();
@@ -199,7 +199,7 @@ Item {
             delegate: Text {
                 text: styleData.value
                 color: {
-                    if(styleData.row < 0)
+                    if(styleData.row < 0) // при очистке components становится отрицательным
                         return "black";
 
                     var row = components.get(styleData.row);
