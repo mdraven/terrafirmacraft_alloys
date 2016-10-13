@@ -22,26 +22,35 @@ Calculator::Status Calculator::evalPostfix(std::queue<PostfixElem>& postfix,
         if(d)
             stack.push(*d);
         else {
-            if(stack.size() < 2)
-                return Status::fail;
-
             Token tok = boost::get<Token>(postfix.front());
 
-            double b = stack.top();
-            stack.pop();
-            double a = stack.top();
-            stack.pop();
+            if(tok == Token::inv) {
+                if(stack.empty())
+                    return Status::fail;
 
-            if(tok == Token::add)
-                stack.push(a+b);
-            else if(tok == Token::sub)
-                stack.push(a-b);
-            else if(tok == Token::mul)
-                stack.push(a*b);
-            else if(tok == Token::div)
-                stack.push(a/b);
-            else
-                return Status::fail;
+                double& a = stack.top();
+                a = -a;
+            }
+            else {
+                if(stack.size() < 2)
+                    return Status::fail;
+
+                double b = stack.top();
+                stack.pop();
+                double a = stack.top();
+                stack.pop();
+
+                if(tok == Token::add)
+                    stack.push(a + b);
+                else if(tok == Token::sub)
+                    stack.push(a - b);
+                else if(tok == Token::mul)
+                    stack.push(a * b);
+                else if(tok == Token::div)
+                    stack.push(a / b);
+                else
+                    return Status::fail;
+            }
         }
 
         postfix.pop();
@@ -78,22 +87,37 @@ Calculator::getPostfix(const std::string& expr,
                 return Status::fail;
             postfix.push(res);
         } else if(tryGetToken(*begin, cur_tok)) {
-            if(cur_tok != Token::open_par) {
-                while(!stack.empty()) {
-                    Token stack_tok = stack.top();
-                    if(stack_tok == Token::open_par)
-                        break;
-
-                    if((cur_tok == Token::mul || cur_tok == Token::div)
-                       && (stack_tok == Token::add || stack_tok == Token::sub))
-                        break;
-
-                    postfix.push(stack_tok);
-                    stack.pop();
+            [&] {
+                if(cur_tok == Token::sub) {
+                    bool is_begining = stack.empty() && postfix.empty();
+                    bool is_par =
+                        (!stack.empty()) && (stack.top() == Token::open_par);
+                    if(is_begining || is_par) {
+                        stack.push(Token::inv);
+                        return;
+                    }
                 }
-            }
 
-            stack.push(cur_tok);
+                if(cur_tok != Token::open_par) {
+                    while(!stack.empty()) {
+                        Token stack_tok = stack.top();
+                        if(stack_tok == Token::open_par)
+                            break;
+
+                        if(cur_tok == Token::inv && stack_tok != Token::inv)
+                            break;
+                        if((cur_tok == Token::mul || cur_tok == Token::div)
+                           && (stack_tok == Token::add
+                               || stack_tok == Token::sub))
+                            break;
+
+                        postfix.push(stack_tok);
+                        stack.pop();
+                    }
+                }
+
+                stack.push(cur_tok);
+            }();
         } else if(*begin == ')') {
             bool has_open_par = false;
             while(!stack.empty()) {
@@ -199,12 +223,12 @@ boost::optional<double> Calculator::get() const {
 
 QString Calculator::status() const {
     switch(m_status) {
-    case Status::ok:
-        return "Ok";
-    case Status::parenthesis:
-        return "Umbalanced parenthesis";
-    case Status::fail:
-        return "Error in expression";
+        case Status::ok:
+            return "Ok";
+        case Status::parenthesis:
+            return "Umbalanced parenthesis";
+        case Status::fail:
+            return "Error in expression";
     }
 
     return "Unknown error";

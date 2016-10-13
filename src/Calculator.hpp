@@ -7,7 +7,7 @@
 class Calculator final {
     enum class Status { ok, fail, parenthesis };
 
-    enum class Token { open_par, add, sub, mul, div };
+    enum class Token { open_par, add, sub, mul, div, inv };
 
     Status m_status;
     double m_res;
