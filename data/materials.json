@@ -1,0 +1,14 @@
+{
+    "Bismuth Bronze": {
+        "image": "bismuth_bronze.png"
+    },
+    "Black Bronze": {
+        "image": "black_bronze.png"
+    },
+    "Zinc": {
+        "image": "zinc.png"
+    },
+    "Copper": {
+        "image": "copper.png"
+    }
+}

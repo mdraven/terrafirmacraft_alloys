@@ -1,0 +1,30 @@
+{
+    "Bismuth Bronze": {
+        "Zinc": {
+            "min_percent": 20,
+            "max_percent": 30
+        },
+        "Copper": {
+            "min_percent": 50,
+            "max_percent": 65
+        },
+        "Bismuth": {
+            "min_percent": 10,
+            "max_percent": 20
+        }
+    },
+    "Black Bronze": {
+        "Copper": {
+            "min_percent": 50,
+            "max_percent": 70
+        },
+        "Silver": {
+            "min_percent": 10,
+            "max_percent": 25
+        },
+        "Gold": {
+            "min_percent": 10,
+            "max_percent": 25
+        }
+    }
+}
