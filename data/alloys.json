@@ -26,5 +26,95 @@
             "min_percent": 10,
             "max_percent": 25
         }
+    },
+    "Bronze": {
+        "Copper": {
+            "min_percent": 88,
+            "max_percent": 92
+        },
+        "Tin": {
+            "min_percent": 8,
+            "max_percent": 12
+        }
+    },
+    "Brass": {
+        "Copper": {
+            "min_percent": 88,
+            "max_percent": 92
+        },
+        "Zinc": {
+            "min_percent": 8,
+            "max_percent": 12
+        }
+    },
+    "Rose Gold": {
+        "Copper": {
+            "min_percent": 15,
+            "max_percent": 30
+        },
+        "Gold": {
+            "min_percent": 70,
+            "max_percent": 85
+        }
+    },
+    "Sterling Silver": {
+        "Copper": {
+            "min_percent": 20,
+            "max_percent": 40
+        },
+        "Silver": {
+            "min_percent": 60,
+            "max_percent": 80
+        }
+    },
+    "Black Steel": {
+        "Steel": {
+            "min_percent": 50,
+            "max_percent": 70
+        },
+        "Nickel": {
+            "min_percent": 15,
+            "max_percent": 25
+        },
+        "Black Bronze": {
+            "min_percent": 15,
+            "max_percent": 25
+        }
+    },
+    "Blue Steel": {
+        "Black Steel": {
+            "min_percent": 50,
+            "max_percent": 55
+        },
+        "Bismuth Bronze": {
+            "min_percent": 10,
+            "max_percent": 15
+        },
+        "Sterling Silver": {
+            "min_percent": 10,
+            "max_percent": 15
+        },
+        "Steel": {
+            "min_percent": 20,
+            "max_percent": 25
+        }
+    },
+    "Red Steel": {
+        "Black Steel": {
+            "min_percent": 50,
+            "max_percent": 55
+        },
+        "Rose Gold": {
+            "min_percent": 10,
+            "max_percent": 15
+        },
+        "Brass": {
+            "min_percent": 10,
+            "max_percent": 15
+        },
+        "Steel": {
+            "min_percent": 20,
+            "max_percent": 25
+        }
     }
 }

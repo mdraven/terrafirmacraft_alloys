@@ -10,5 +10,44 @@
     },
     "Copper": {
         "image": "copper.png"
+    },
+    "Bismuth": {
+        "image": "bismuth.png"
+    },
+    "Silver": {
+        "image": "silver.png"
+    },
+    "Gold": {
+        "image": "gold.png"
+    },
+    "Bronze": {
+        "image": "bronze.png"
+    },
+    "Tin": {
+        "image": "tin.png"
+    },
+    "Brass": {
+        "image": "brass.png"
+    },
+    "Rose Gold": {
+        "image": "rose_gold.png"
+    },
+    "Sterling Silver": {
+        "image": "sterling_silver.png"
+    },
+    "Steel": {
+        "image": "steel.png"
+    },
+    "Nickel": {
+        "image": "nickel.png"
+    },
+    "Black Steel": {
+        "image": "black_steel.png"
+    },
+    "Blue Steel": {
+        "image": "blue_steel.png"
+    },
+    "Red Steel": {
+        "image": "red_steel.png"
     }
 }

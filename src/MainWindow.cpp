@@ -30,7 +30,7 @@ void MainWindow::configComponentsTable() {
     m_components->setColumnCount(header_labels.size());
     m_components->setHorizontalHeaderLabels(header_labels);
 
-    m_components->setColumnWidth(Col::name, 80);
+    m_components->setColumnWidth(Col::name, 90);
     m_components->setColumnWidth(Col::expression, 100);
     m_components->setColumnWidth(Col::value, 45);
     m_components->setColumnWidth(Col::min_percent, 35);
