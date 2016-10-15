@@ -13,9 +13,9 @@
 #include <QtCore/QMap>
 #include <QtCore/QString>
 #include <QtCore/QtDebug>
-#include <QtGui/QApplication>
 #include <QtGui/QPixmap>
 #include <QtUiTools/QUiLoader>
+#include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>

@@ -9,7 +9,8 @@ class SortingDisabler final {
     QTableView* m_table_view;
 public:
     SortingDisabler(QTableView* table_view)
-        : m_table_view(table_view) {
+        : m_enabled(false)
+        , m_table_view(table_view) {
         if(m_table_view == nullptr)
             return;
 
