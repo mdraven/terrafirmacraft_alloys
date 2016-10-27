@@ -11,7 +11,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5UiTools REQUIRED)
 
-include(cotire)
+# include(cotire)
 
 #### Configure ----------------------------
 
@@ -46,5 +46,5 @@ target_link_libraries(${EXEC}
 )
 
 # export CCACHE_SLOPPINESS="pch_defines,time_macros"
-set_target_properties(${EXEC} PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "${SOURCE_DIR}/external.hpp")
-cotire(${EXEC})
+# set_target_properties(${EXEC} PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "${SOURCE_DIR}/external.hpp")
+# cotire(${EXEC})
